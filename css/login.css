@@ -1,0 +1,96 @@
+  @import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz');
+  @import url('https://fonts.googleapis.com/css?family=Roboto|Yanone+Kaffeesatz');
+  *{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    letter-spacing: 1.8px;
+  }
+  body{
+    
+      background: url(../img/login.jpg) center center no-repeat fixed;    
+      background-size: 100vw 100vh; /*100 porciento del ancho  y del alto de la ventana*/
+      background-attachment: fixed; /* para que la imagen no se repita*/
+      margin:0;
+      font-family: 'Yanone Kaffeesatz', sans-serif; /*monospace fuente de letra */
+      letter-spacing: 1.6px;
+  }
+  
+  form{
+      width: 450px;
+      margin: auto;
+      background: rgba(236, 235, 235, 0.4); /* crea la transparencia*/
+      padding: 20px 20px; /* de manera vertical y horizontal*/
+      box-sizing: border-box; /* el relleno del padding queda hacia adentro*/
+      margin-top: 5%; /*margen desde arriba */
+      border-radius: 7px; /* borde del formulario */
+      font-family: 'Yanone Kaffeesatz', sans-serif;
+  
+  }
+
+.navegacion{
+    text-align: right;
+}
+  
+  h2 {
+      color: #474646; /*color de letra */
+      text-align: center;/*centra el texto */
+      margin: 0;
+      font-size: 2.0em;/* tamaño de letra*/
+      letter-spacing: 2.0px;
+      margin-bottom: 20px;/* distancia entre el h2 y los input */
+  
+  }
+  label{
+      font-size: 1.1em;
+  }
+  
+  input{
+      width: 100%;/*ancho */
+      margin-bottom: 20px;/* separa los elementos input*/
+      padding: 9px; /* el padding solo hace que se salga*/
+      box-sizing: border-box; /*ajusta el padding  */
+      font-size: 17px;
+      border: none;
+  }
+
+  a{
+      color: #3A3A3A;
+      font-size: 1.1em;
+  }
+  .container{
+      text-align: right;
+      justify-content: space-between;
+  }
+
+  #boton{
+      
+      color: #fff; /*color de letra*/
+      padding: 10px;
+      font-size: 1.1em;
+      background-color: transparent; /* color del boton*/
+      color: black;
+      border: 2px solid #FFFFFF;
+      
+      
+  }
+  
+  #boton:hover{
+      cursor: pointer; /*cuando pasa el mouse cambia*/
+      border: 2px solid #3A3A3A;
+  }
+
+  input:hover{
+    cursor: pointer; /*cuando pasa el mouse cambia*/
+    border: 1px solid #4BA4F1;
+  }
+
+  a:hover{
+    color: #388BD8;
+  }
+   /*si se cumple una condicion hace algo similar a un IF*/
+  @media(max-width:480px){
+      form{
+          width: 100%;
+      }
+  }
+  
+  
