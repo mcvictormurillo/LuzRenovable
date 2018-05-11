@@ -26,6 +26,24 @@
   
   }
 
+  .centrar
+  {
+      position: absolute;
+      /*nos posicionamos en el centro del navegador*/
+      top:50%;
+      left:50%;
+      /*determinamos una anchura*/
+      width:400px;
+      /*indicamos que el margen izquierdo, es la mitad de la anchura*/
+      margin-left:-200px;
+      /*determinamos una altura*/
+      height:300px;
+      /*indicamos que el margen superior, es la mitad de la altura*/
+      margin-top:-150px;
+      border:1px solid #808080;
+      padding:5px;
+  }
+
 .navegacion{
     text-align: right;
 }
@@ -86,11 +104,17 @@
   a:hover{
     color: #388BD8;
   }
+  
+  
+  .text-center{text-align: center;}
+  .precio-item{height: 50px;width: auto}
+  .show-transport{width: 80%;background-color: #FFF;color: #34b0f6; margin: 30px auto 40px auto; border:2px solid #34b0f6;}
+  .show-reportHumedad{color: #34b0f6; align-content: center; margin: 9% auto 9% auto; width: 90%; border: 2px solid #34b0f6; background-color: #FFF}
+  .td-show-transport{border:1px solid #8824CA}
+
    /*si se cumple una condicion hace algo similar a un IF*/
-  @media(max-width:480px){
-      form{
-          width: 100%;
-      }
-  }
-  
-  
+   @media(max-width:480px){
+    form{
+        width: 100%;
+    }
+}

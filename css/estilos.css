@@ -282,4 +282,21 @@ h1, h2, h3, h4, h5, h6, p {
   }
 }
 
+#boton{
+  
+  color: #fff; /*color de letra*/
+  padding: 10px;
+  font-size: 1.1em;
+  background-color: transparent; /* color del boton*/
+  color: black;
+  border: 2px solid #FFFFFF;
+  
+  
+}
+
+#boton:hover{
+  cursor: pointer; /*cuando pasa el mouse cambia*/
+  border: 2px solid #3A3A3A;
+}
+
 

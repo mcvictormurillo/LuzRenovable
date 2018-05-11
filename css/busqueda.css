@@ -1,0 +1,11 @@
+form{
+    width: 250px;
+    margin: auto;
+    background: rgba(236, 235, 235, 0.4); /* crea la transparencia*/
+    padding: 20px 20px; /* de manera vertical y horizontal*/
+    box-sizing: border-box; /* el relleno del padding queda hacia adentro*/
+    margin-top: 5%; /*margen desde arriba */
+    border-radius: 7px; /* borde del formulario */
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+
+}

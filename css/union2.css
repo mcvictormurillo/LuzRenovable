@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz');
+@import url('https://fonts.googleapis.com/css?family=Roboto|Yanone+Kaffeesatz');
+*{
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  letter-spacing: 1.8px;
+}
+body{
+  
+    background: url(../img/login.jpg) center center no-repeat fixed;    
+    background-size: 100vw 100vh; /*100 porciento del ancho  y del alto de la ventana*/
+    background-attachment: fixed; /* para que la imagen no se repita*/
+    margin:0;
+    font-family: 'Yanone Kaffeesatz', sans-serif; /*monospace fuente de letra */
+    letter-spacing: 1.6px;
+}
+
+form{
+    width: 450px;
+    margin: auto;
+     background: rgba(236, 235, 235, 0.4);
+    padding: 20px 20px; /* de manera vertical y horizontal*/
+    box-sizing: border-box; /* el relleno del padding queda hacia adentro*/
+    margin-top: 5%; /*margen desde arriba */
+    border-radius: 7px; /* borde del formulario */
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+
+}
+
+
+
+.centrar
+{
+    position: absolute;
+    /*nos posicionamos en el centro del navegador*/
+    top:50%;
+    left:50%;
+    /*determinamos una anchura*/
+    width:400px;
+    /*indicamos que el margen izquierdo, es la mitad de la anchura*/
+    margin-left:-200px;
+    /*determinamos una altura*/
+    height:300px;
+    /*indicamos que el margen superior, es la mitad de la altura*/
+    margin-top:-150px;
+    border:1px solid #808080;
+    padding:5px;
+}
+
+.navegacion{
+  text-align: right;
+}
+
+h2 {
+    color: #474646; /*color de letra */
+    text-align: center;/*centra el texto */
+    margin: 0;
+    font-size: 2.0em;/* tamaño de letra*/
+    letter-spacing: 2.0px;
+    margin-bottom: 20px;/* distancia entre el h2 y los input */
+
+}
+label{
+    font-size: 1.1em;
+}
+
+input  {
+    width: 100%;/*ancho */
+    margin-bottom: 20px;/* separa los elementos input*/
+    padding: 9px; /* el padding solo hace que se salga*/
+    box-sizing: border-box; /*ajusta el padding  */
+    font-size: 17px;
+    border: none;
+}
+
+.seleccionar{
+    width: 100%;/*ancho */
+    margin-bottom: 20px;/* separa los elementos input*/
+    padding: 9px; /* el padding solo hace que se salga*/
+    box-sizing: border-box; /*ajusta el padding  */
+    font-size: 17px;
+  
+    
+}
+
+a{
+    color: #3A3A3A;
+    font-size: 1.1em;
+}
+.container{
+    text-align: right;
+    justify-content: space-between;
+}
+
+#boton{
+    
+    color: #fff; /*color de letra*/
+    padding: 10px;
+    font-size: 1.1em;
+    background-color: transparent; /* color del boton*/
+    color: black;
+    border: 2px solid #FFFFFF;
+    
+    
+}
+
+#boton:hover{
+    cursor: pointer; /*cuando pasa el mouse cambia*/
+    border: 2px solid #3A3A3A;
+}
+
+input:hover{
+  cursor: pointer; /*cuando pasa el mouse cambia background:#3CB5F7;*/
+  border: 1px solid #4BA4F1;
+}
+
+a:hover{
+  color: #388BD8;
+}
+
+   @media(max-width:480px){
+    form{
+        width: 100%;
+    }
+}
+
+
+table {    
+       width: 80%;
+       margin: 30px auto; 
+       text-align: center;
+       border-collapse: collapse; 
+       
+     
+    }
+
+th {   
+    padding: 8px;
+    background: #4A92FF;;
+    border-top: 4px solid #4A72FF;
+    border-bottom: 1px solid #FFFFFF; 
+    color:#FFFFFF; 
+}
+
+td {    
+    padding: 8px;    
+    background:#FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
+    color:#3A3A3A;
+    border-top: 1px solid #FFFFFF; }
+
+tr:hover td { background:#D3D1D1; color: #FFFFFF; }
+
+.seleccionar{
+    color: #3A3A3A;
+    
+}
+.seleccionar:hover { background:   rgb(255, 255, 255); color:#3A3A3A; }

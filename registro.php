@@ -4,21 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0">
     <title>Luz Renovable|Login</title>
-    <link rel="stylesheet" href="css/login.css">
-    <link href="https://file.myfontastic.com/NGrnUeBnEQFSAECP5qEMcH/icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/login.css" type="text/css" media="all" />
+    <link href="https://file.myfontastic.com/NGrnUeBnEQFSAECP5qEMcH/icons.css" rel="stylesheet"/>
 </head>
 
+<header class="header">
+      <div class="contenedor">
+        <h5 class="logo">Luz Renovable</h5>
+        <span class="icon-menu" id="btn-menu"></span>
+        <nav class="nav" id="nav">
+          <ul class="menu">
+            
+            
+          </ul>
+        </nav>
+      </div>
+    </header>
+
 <body>
-    <div class="navegacion">
-            <a href="inicio.php">Inicio</a>
-            <a href="inicio.php">Registro</a>
-            <a href="servicios.php">Servicios</a>
-          
-            
-            
-    </div>
+   
     
-    <form action="registro.php" method="post" >
+    <form action="index.php" method="post" >
         <h2>REGISTRO</h2>       
      
         <label for="nombre">Nombre</label>        
@@ -57,8 +64,8 @@
         <div class="container">
             
             <button type="submit" name="botonRegistro" id="boton">Enviar Solicitud</button>            
-            <button type="submit" name="botonActualizar" id="boton" >Actualizar Datos</button>
-            <button type="submit" name="botontnHabilitar" id="boton" >Inhabilitar</button>
+            <!--<button type="submit" name="botonActualizar" id="boton" >Actualizar Datos</button>-->
+            
 
             
         </div>
@@ -79,7 +86,8 @@ if(isset($_POST['botonRegistro']))
         $nombre= $_POST["nombre"];
         $apellidos=$_POST["apellidos"];
         $id= $_POST["id"];
-        $pass= $_POST["pass"];
+        $pass1= $_POST["pass"];
+        $pass=md5($pass1);
         $email=$_POST["email"];
         $telefono=$_POST["telefono"];
         $edad=$_POST["edad"];
@@ -115,7 +123,8 @@ if(isset($_POST['botonActualizar']))
     $nombre= $_POST["nombre"];
     $apellidos=$_POST["apellidos"];
     $id= $_POST["id"];
-    $pass= $_POST["pass"];
+    $pass1= $_POST["pass"];
+    $pass=md5($pass1);
     $email=$_POST["email"];
     $telefono=$_POST["telefono"];
     $edad=$_POST["edad"];
@@ -139,26 +148,6 @@ if(isset($_POST['botonActualizar']))
 }
 
 
-if(isset($_POST['botontnHabilitar']))
-{
-    require_once ('conexionbd.php');
-    $conexion = conectar();
-    
-    $id= $_POST["id"];
-    $estado="0";
-    
 
-        $sql="UPDATE usuarios SET estado='$estado' WHERE id = '$id';";
-        if (mysqli_query($conexion,$sql)) {
-            //echo "<br/>New record created successfully";
-            echo '<script language="javascript">alert("Acción Exitosa - Usuaruio No Activo");</script>'; 
-        } 
-        else {
-        //echo "Error: " . $sql . "<br>" . mysqli_error($conexion);
-        echo '<script language="javascript">alert("Error");</script>'; 
-        }
-
-        mysqli_close($conexion);
-}
 
 ?>

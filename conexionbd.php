@@ -1,7 +1,7 @@
 <?php
 
 function conectar() {
-    $conexion = new mysqli('localhost','root','', 'luzbd');
+    $conexion = new mysqli('localhost','root','', 'thl');
     if (mysqli_connect_errno($conexion)) {
         echo "Fallo al conectar a MySQL: " . mysqli_connect_error();
     }

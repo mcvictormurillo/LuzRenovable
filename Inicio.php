@@ -1,10 +1,25 @@
+
+<?php
+session_start();
+
+$varSesion =$_SESSION['usuario'];
+error_reporting(0);
+if($varSesion==null||$varSesion==''){
+  echo "Usted no tiene autorizacion";
+  die();
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0">
     <title>Luz Renovable| Inicio</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    
+    <link rel="stylesheet" href="css/estilos.css" type="text/css" media="all" />
     <link href="https://file.myfontastic.com/NGrnUeBnEQFSAECP5qEMcH/icons.css" rel="stylesheet">
 </head>
 
@@ -14,15 +29,17 @@
         <span class="icon-menu" id="btn-menu"></span>
         <nav class="nav" id="nav">
           <ul class="menu">
-            <li class="menu__item"><a href="/" class="menu__link select">Inicio</a></li>
-            <li class="menu__item"><a href="" class="menu__link">Servicios</a></li>
-            <li class="menu__item"><a href="registro.php" class="menu__link">Registrate</a></li>
+            <li class="menu__item"><a href="inicio.php" class="menu__link select">Inicio</a></li>
+            <li class="menu__item"><a href="servicios.php" class="menu__link">Servicios</a></li>
+            <li class="menu__item"><a href="cerrar_sesion.php" class="menu__link">Cerrar Sesion</a></li>
             
           </ul>
         </nav>
       </div>
     </header>
-
+  <body>
+   
+  
     <div class="banner">
      <img src="img/formulario.jpg" alt="">
       <div class="contenedor">
