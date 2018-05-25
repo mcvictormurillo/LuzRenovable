@@ -6,6 +6,28 @@
 -- Tiempo de generación: 30-04-2018 a las 15:31:33
 -- Versión del servidor: 10.1.30-MariaDB
 -- Versión de PHP: 5.6.33
+CREATE TABLE `sensores` (
+  iD int(11) NOT NULL,
+  lat float(6) NOT NULL,
+  lon float(6) NOT NULL,
+  tTiempo timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  temp int(11) NOT NULL,
+  hum int(11) NOT NULL,
+  lum int(11) NOT NULL,
+  senT int(11) NOT NULL, 
+  estado int(11) NOT NULL,
+  PRIMARY KEY (iD)
+)
+
+
+CREATE TABLE `sensores_usuarios` (
+  idSensor int(11) NOT NULL,
+  idUsuario varchar(30) NOT NULL,
+  estado int (10) NOT NULL,
+  servicio int (10) NOT NULL,
+   
+  PRIMARY KEY (idSensor, idUsuario)
+)
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;

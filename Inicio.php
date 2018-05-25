@@ -25,7 +25,7 @@ if($varSesion==null||$varSesion==''){
 
     <header class="header">
       <div class="contenedor">
-        <h5 class="logo">Luz Renovable</h5>
+        <h5 class="logo"></h5>
         <span class="icon-menu" id="btn-menu"></span>
         <nav class="nav" id="nav">
           <ul class="menu">
@@ -43,7 +43,7 @@ if($varSesion==null||$varSesion==''){
     <div class="banner">
      <img src="img/formulario.jpg" alt="">
       <div class="contenedor">
-        <h2 class="banner__titulo">PROYECTO LAB IV</h2> 
+        <h2 class="banner__titulo">LUZRENOVABLE</h2> 
         <p class="banner__txt">El sol provee 1400 veces más energía en un día de la que 
         </br> consumimos en un año </br>
         </br>Vivek Wadhwa</p>

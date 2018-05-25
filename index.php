@@ -36,7 +36,7 @@
 <?php
 if(isset($_POST['btnIniciarSesion']))
 {
-        require_once ('conexionbd.php');
+        require_once ('conexionbd.php');+
         $conexion = conectar();
         $id = $_POST['user'];
         $pass1=$_POST['pass'];

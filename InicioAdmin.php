@@ -25,7 +25,7 @@ if($varSesion==null||$varSesion==''){
 
     <header class="header">
       <div class="contenedor">
-        <h5 class="logo">Luz Renovable</h5>
+        <h5 class="logo">SMARTHLIGHT</h5>
         <span class="icon-menu" id="btn-menu"></span>
         <nav class="nav" id="nav">
           <ul class="menu">
@@ -33,7 +33,7 @@ if($varSesion==null||$varSesion==''){
             <li class="menu__item"><a href="serviciosAdmin.php" class="menu__link">Servicios</a></li>
             <li class="menu__item"><a href="registroAdmin.php" class="menu__link">Registrate</a></li>
             <li class="menu__item"><a href="ListarUsuarios.php" class="menu__link">ListarUsuarios</a></li>
-            <li class="menu__item"><a href="ListarPagina.php" class="menu__link">ListarPagina</a></li>
+             <!--<li class="menu__item"><a href="ListarPagina.php" class="menu__link">ListarPagina</a></li>-->
             <li class="menu__item"><a href="cerrar_sesion.php" class="menu__link">Cerrar Sesion</a></li>
             
           </ul>
@@ -44,9 +44,9 @@ if($varSesion==null||$varSesion==''){
    
   
     <div class="banner">
-     <img src="img/formulario.jpg" alt="">
+     <img src="img/login.jpg" alt="">
       <div class="contenedor">
-        <h2 class="banner__titulo">PROYECTO LAB IV</h2> 
+        <h2 class="banner__titulo">LUZ RENOVABLE</h2> 
         <p class="banner__txt">El sol provee 1400 veces más energía en un día de la que 
         </br> consumimos en un año </br>
         </br>Vivek Wadhwa</p>
@@ -57,8 +57,9 @@ if($varSesion==null||$varSesion==''){
       <div class="contenedor">
         <section class="info">
           <article class="info__columna">
-            <img src="img/sol.jpg" alt="" class="info__img">
-            <h2 class="info__titulo">¿Quienes Somos?</h2>
+            <div class="info__columna__head"><h2>¿Quienes Somos?</h2></div>                    
+            <!--<img src="img/sol.jpg" alt="" class="info__img">-->
+            
             <p class="info__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum aut, incidunt aperiam dicta totam cumque.</p>
           </article>
           <article class="info__columna">

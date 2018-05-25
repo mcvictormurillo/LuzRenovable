@@ -14,7 +14,7 @@ body {
 h1, h2, h3, h4, h5, h6, p {
   font-family: 'Yanone Kaffeesatz', sans-serif;
   letter-spacing: 1.5px;
-  color: #2E2C2C;
+  
 }
 
 .section__titulo {
@@ -27,6 +27,7 @@ h1, h2, h3, h4, h5, h6, p {
   width: 99%;
 }
 /*-------------------Estilos del header-------------------*/
+
 .header {
   height: 40px;
 }
@@ -50,6 +51,13 @@ h1, h2, h3, h4, h5, h6, p {
   margin-left: auto;
   cursor: pointer;
 }
+
+/*-----------------main--------------*/
+.main{
+  background: rgb(230, 230, 230);
+}
+
+
 /*------------------Estilos del menu------------------*/
 .nav {
   position: absolute;
@@ -103,19 +111,30 @@ h1, h2, h3, h4, h5, h6, p {
 
 /*-----------------Estilos de info-----------------*/
 .info__columna {
-  background: #F1F1F1;
-  color: #2E2C2C;
- 
+  transform: translateY(-20%);
+  background: #fff;
+  color: #444;
   margin-bottom: 30px;
+  border: rgb(214, 214, 214) solid 2px;
+ 
+  
+}
+.info__columna:hover{
+  
   -webkit-box-shadow: 0px 4px 7px 1px rgba(140,136,140,1);
   -moz-box-shadow: 0px 4px 7px 1px rgba(140,136,140,1);
   box-shadow: 0px 4px 7px 1px rgba(140,136,140,1);
 }
 
-.info__columna:hover{
 
-}
 
+.info__columna__head{  
+    background: rgb(255, 255, 255);
+    display: flex;
+    padding: 15px 30px;
+    height: 75px;
+    align-items: center;
+  }
 /*-----------------Estilos de cursos-----------------*/
 .cursos__columna {
   position: relative;
@@ -185,7 +204,7 @@ h1, h2, h3, h4, h5, h6, p {
     margin-top: -90px;
   }
   .info__columna {
-    width: 32%;
+    width: 27%;
   }
   .info__titulo {
     font-size: 30px;
@@ -298,5 +317,6 @@ h1, h2, h3, h4, h5, h6, p {
   cursor: pointer; /*cuando pasa el mouse cambia*/
   border: 2px solid #3A3A3A;
 }
+
 
 

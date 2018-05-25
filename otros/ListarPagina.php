@@ -12,7 +12,6 @@
   
 </head>
 
-
 <header class="header">
       <div class="contenedor">
         <h5 class="logo">Luz Renovable</h5>
@@ -20,10 +19,10 @@
         <nav class="nav" id="nav">
           <ul class="menu">
             <li class="menu__item"><a href="inicioAdmin.php" class="menu__link ">Inicio</a></li>
-            <li class="menu__item"><a href="serviciosAdmin.php" class="menu__link select">Servicios</a></li>
+            <li class="menu__item"><a href="serviciosAdmin.php" class="menu__link">Servicios</a></li>
             <li class="menu__item"><a href="registroAdmin.php" class="menu__link">Registrate</a></li>
             <li class="menu__item"><a href="ListarUsuarios.php" class="menu__link">ListarUsuarios</a></li>
-            <!--<li class="menu__item"><a href="ListarPagina.php" class="menu__link">ListarPagina</a></li>-->
+             <!--<li class="menu__item"><a href="ListarPagina.php" class="menu__link">ListarPagina</a></li>-->>
             <li class="menu__item"><a href="cerrar_sesion.php" class="menu__link">Cerrar Sesion</a></li>
             
           </ul>
@@ -32,178 +31,124 @@
     </header>
 
 <body>
-<!--
-<form  id ="ojo" action="serviciosAdmin.php" method="post"  >
-        <h2>LISTAR</h2>     
-        <label for="id2"></label>        
-        <input type="text" name="id2"  placeholder="ID..."  >
-        <div class="container">
-        <button type="submit" id="boton" name="botonListar">Listar Usuario</button> 
-        <button type="submit" id="boton" name="botonListarTodos">Listar Todos</button> 
-        </div>  
-      
-</form>
--->
-
-<!--<form id="var-clima" action="serviciosAdmin.php" method="post" >
+  
+<form action="ListarPagina.php" method="post" >
         <h2>VARIABLES CLIMATICAS</h2>     
-        <label for="id2"></label>        
-        <input type="text" name="id2"  placeholder="ID..." required ></br>   
+        <label for="id"></label>        
+        <input type="text" name="id"  placeholder="ID..." required ></br>   
         <button type="submit" id="boton" name="botonListar">Listar Variables</button>
         <button type="submit" id="boton" name="botonListarValores">Valores Sensores</button>  
 </form>
--->
-<div>
-    <form  id ="ser" action="serviciosAdmin.php" method="post" >
-            <h2>FIJAR VARIABLE</h2>     
-            <label for="id"></label>        
-            <select name="select" class="seleccionar">
-                <option value="temp_max">Temp Max</option>
-                <option value="hum_max">Hum Max</option>
-                <option value="lum_max">Lum Max</option>
-                <option value="temp_min">Temp Minx</option>
-                <option value="hum_min">Hum Min</option>
-                <option value="lum_min">Lum Min</option>
-                <option value="act1">Act 1</option>
-                <option value="act2">Act 2</option>
-                <option value="act3">Act 3</option>            
-            </select>
-            <input type="text" name="id"  placeholder="ID..." required >  
-            
-            <input type="number" min="0" max="40" name="valor"  placeholder="Valor..." required ></br>
-            <button type="submit" id="boton" name="botonFijar">Fijar</button> 
-    </form>
-</div>
-
-<div>
-    <form action="serviciosAdmin.php" method="post" >
-        <h2>VARIABLES CLIMATICAS</h2>     
-        <label for="id2">ID</label> 
-        <input type="text" name="id2"  required ></br>
-        <div class="container">            
-            <button type="submit" id="boton" name="botonListar">Listar Variables</button>
-            <button type="submit" id="boton" name="botonListarValores">Valores Sensores</button>            
-        </div>        
-    </form>
-</div>
-
-
 
 <script type="text/javascript">
-    function mostrar() {
-        $('#grafica').highcharts({
-            chart: {
-                type: 'bar'
-            },
-            title: {
-                text: 'Último Registro'
-            },
-            subtitle: {
-                text: 'LUz Renovable'
-            },
-            xAxis: {
-                categories: [
-                    <?php
-                        $id = $_POST['id2'];
-                        require_once ('conexionbd.php');
-                        $conexion = conectar();
-                        $sql= "SELECT * FROM valoressensores where id='$id';";
-                        $result = mysqli_query($conexion,$sql);                               
-                        while($consulta = mysqli_fetch_array($result)){
-                    ?> 
+function mostrar() {
+    $('#container').highcharts({
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Último Registro'
+        },
+        subtitle: {
+            text: 'LUz Renovable'
+        },
+        xAxis: {
+            categories: [
+                <?php
+                    $id = $_POST['id'];
+                    require_once ('conexionbd.php');
+                    $conexion = conectar();
+                    $sql= "SELECT * FROM valoressensores where id='$id';";
+                    $result = mysqli_query($conexion,$sql);                               
+                    while($consulta = mysqli_fetch_array($result)){
+                ?> 
 
-                    [<?php  echo $id?>],
+                [<?php  echo $id?>],
 
-                    <?php
-                        }
-                    ?>
-
-                ],
-                title: {
-                    text: null
-                }
-            },
-            yAxis: {
-                min: 0,
-                title: {
-                    text: 'Valor',
-                    align: 'high'
-                },
-                labels: {
-                    overflow: 'justify'
-                }
-            },
-            tooltip: {
-                valueSuffix: ' '
-            },
-            plotOptions: {
-                bar: {
-                    dataLabels: {
-                        enabled: true
+                <?php
                     }
+                ?>
+
+            ],
+            title: {
+                text: null
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Valor',
+                align: 'high'
+            },
+            labels: {
+                overflow: 'justify'
+            }
+        },
+        tooltip: {
+            valueSuffix: ' '
+        },
+        plotOptions: {
+            bar: {
+                dataLabels: {
+                    enabled: true
                 }
-            },
-            legend: {
-                layout: 'vertical',
-                align: 'right',
-                verticalAlign: 'top',
-                x: -40,
-                y: 100,
-                floating: true,
-                borderWidth: 10,
-                backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
-                shadow: true
-            },
-            credits: {
-                enabled: false
-            },
-            series: [{
-                name: 'Valor',
-                data: [
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            x: -40,
+            y: 100,
+            floating: true,
+            borderWidth: 10,
+            backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+            shadow: true
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Valor',
+            data: [
 
-                    <?php
-                        require_once ('conexionbd.php');
-                        $conexion = conectar();
-                        $sql= "SELECT * FROM valoressensores where id='$id' ORDER BY Tiempo DESC LIMIT 1;";
-                        $result = mysqli_query($conexion,$sql);                               
-                        while($consulta = mysqli_fetch_array($result)){
-                    ?> 
-                    [<?php  echo $consulta['Temp']?>],
-                    [<?php  echo $consulta['Hum']?>],
-                    [<?php  echo $consulta['Lum']?>],
-                    [<?php  echo $consulta['SenT']?>],
-                    
-                    
+                <?php
+                    require_once ('conexionbd.php');
+                    $conexion = conectar();
+                    $sql= "SELECT * FROM valoressensores where id='$id' ORDER BY Tiempo DESC LIMIT 1;";
+                    $result = mysqli_query($conexion,$sql);                               
+                    while($consulta = mysqli_fetch_array($result)){
+                ?> 
+                [<?php  echo $consulta['Temp']?>],
+                [<?php  echo $consulta['Hum']?>],
+                [<?php  echo $consulta['Lum']?>],
+                [<?php  echo $consulta['SenT']?>],
+                
+                
 
-                    <?php
-                        }
-                    ?>
-                ]
-            }]
-        });
-    };
-</script>
-
+                <?php
+                    }
+                ?>
+            ]
+        }]
+    });
+};
+		</script>
 <script src="Highcharts-4.1.5/js/highcharts.js"></script>
 <script src="Highcharts-4.1.5/js/highcharts-3d.js"></script>
 <script src="Highcharts-4.1.5/js/modules/exporting.js"></script>
-<div id="grafica" style="width: 80%;margin-top:10px;margin:auto;"></div>
+<div id="container" style="width: 80%;margin-top:10px;margin:auto;"></div>
 </body>
 </html>
 
 
-
-
-  
-
-
 <?php
-//----------------------------------------------------
+
 if(isset($_POST['botonListar']))
 {
         require_once ('conexionbd.php');
         $conexion = conectar();
-        $id = $_POST['id2'];
+        $id = $_POST['id'];
         $sql= "SELECT * FROM pagina WHERE id='$id';";
         if ($result = mysqli_query($conexion,$sql)) {
             
@@ -260,7 +205,7 @@ if(isset($_POST['botonListarValores']))
 {
         require_once ('conexionbd.php');
         $conexion = conectar();
-        $id = $_POST['id2'];
+        $id = $_POST['id'];
         $sql= "SELECT * FROM valoressensores WHERE id='$id';";
         if ($result = mysqli_query($conexion,$sql)) {
             //8395298
@@ -308,30 +253,6 @@ if(isset($_POST['botonListarValores']))
         echo "</script>";      
 }
 
-//----------------------------------------------------
-
-if(isset($_POST['botonFijar']))
-{
-    require_once ('conexionbd.php');
-    $conexion = conectar();
-    
-    $id= $_POST["id"];
-    $campoTabla=$_POST["select"];
-    $valor=$_POST["valor"];
-    
-    
-
-        $sql="UPDATE pagina SET $campoTabla ='$valor' WHERE id = '$id';";
-        if (mysqli_query($conexion,$sql)) {
-            //echo "<br/>New record created successfully";
-            echo '<script language="javascript">alert("Acción Exitosa");</script>'; 
-        } 
-        else {
-        //echo "Error: " . $sql . "<br>" . mysqli_error($conexion);
-        echo '<script language="javascript">alert("Error");</script>'; 
-        }
-
-        mysqli_close($conexion);
-}
 
 ?>
+

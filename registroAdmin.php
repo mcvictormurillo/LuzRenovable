@@ -19,7 +19,7 @@
             <li class="menu__item"><a href="serviciosAdmin.php" class="menu__link">Servicios</a></li>
             <li class="menu__item"><a href="registroAdmin.php" class="menu__link select">Registrate</a></li>
             <li class="menu__item"><a href="ListarUsuarios.php" class="menu__link">ListarUsuarios</a></li>
-            <li class="menu__item"><a href="ListarPagina.php" class="menu__link">ListarPagina</a></li>
+             <!--<li class="menu__item"><a href="ListarPagina.php" class="menu__link">ListarPagina</a></li>-->
             <li class="menu__item"><a href="cerrar_sesion.php" class="menu__link">Cerrar Sesion</a></li>
             
           </ul>
@@ -70,13 +70,28 @@
             
             <button type="submit" name="botonRegistro" id="boton">Enviar Solicitud</button>            
             <button type="submit" name="botonActualizar" id="boton" >Actualizar Datos</button>
-            <button type="submit" name="botontnHabilitar" id="boton" >Inhabilitar</button>
+     
 
             
         </div>
   
         
     </form>
+
+    <div>
+    <form action="registroAdmin.php" method="post" >
+        <h2>CAMBIAR ESTADO</h2>       
+
+        <label for="id2">Id</label>
+        <input type="text" name="id2"  required ></br>
+        <div class="container">            
+            <button type="submit" name="botontnHabilitar" id="boton" >Cambiar</button>            
+        </div>
+  
+        
+    </form>
+
+    </div>
         
 </body>
      
@@ -158,14 +173,14 @@ if(isset($_POST['botontnHabilitar']))
     require_once ('conexionbd.php');
     $conexion = conectar();
     
-    $id= $_POST["id"];
+    $id= $_POST["id2"];
     $estado="0";
     
 
         $sql="UPDATE usuarios SET estado='$estado' WHERE id = '$id';";
         if (mysqli_query($conexion,$sql)) {
             //echo "<br/>New record created successfully";
-            echo '<script language="javascript">alert("Acción Exitosa - Usuaruio No Activo");</script>'; 
+            echo '<script language="javascript">alert("Acción Exitosa - Usuario No Activo");</script>'; 
         } 
         else {
         //echo "Error: " . $sql . "<br>" . mysqli_error($conexion);
